@@ -35,11 +35,44 @@ def lendo_matricula():
             
 
 def perguntando(a):
-    a.salario_bruto = input("Digite o seu salário bruto: ")
-    a.vale_transporte = input("Deseja receber o vale transporte?")
-    a.vale_refeicao = input("Digite o valor do vale refeição: ")
+    a.salario_bruto = float(input("Digite o seu salário bruto: "))
+    a.dependentes = int(input)
+    a.vale_transporte = input("Deseja receber o vale transporte(sim / não)?")
+    a.vale_refeicao = float(input("Digite o valor do vale refeição: "))
     lista_funcionario.append(a)
-    
+
+def INSS(salario):
+    if salario <= 1100.00:
+        desconto = salario * 0.075
+        salario_liquido = salario - desconto
+        return salario_liquido
+    elif salario >= 1100.01 and salario <= 2203.48:
+        desconto = salario * 0.09
+        salario_liquido = salario - desconto
+        return salario_liquido
+    elif salario >= 2203.49 and salario <= 3305.22:
+        desconto = salario * 0.12
+        salario_liquido = salario - desconto
+        return salario_liquido
+    elif salario >= 3305.23 and salario <= 6433.57:
+        desconto = salario * 0.14
+        salario_liquido = salario - desconto
+        return salario_liquido
+    else:
+        salario_liquido = salario - 854.36
+        return salario_liquido
+
+def IRRF(salario):
+    if salario >= 2259.21 and salario <= 2826.65:
+        desconto = salario * 0.075
+        salario_liquido = salario - desconto
+        return salario_liquido
+    elif salario >= 2826.66 and salario <= 3751.05:
+        desconto = salario * 0.15
+        salario_liquido = salario - desconto
+        return salario_liquido
+    elif salario >= 3751.06 and salario <= 4664.68:
+        desconto = salario * 0. 
 limpa_tela()
 while True:
     opcao = int(input("""Seja Bem Vindo ao sistema. O que deseja fazer?
@@ -54,6 +87,9 @@ while True:
             funcionario = lendo_matricula()
             perguntando(funcionario)
             break
+while True:
+
+
 
                 
     
